@@ -9,10 +9,17 @@ throttling counters).
 
 from pathlib import Path
 
-import environ
+import environ,os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 REPO_ROOT = BASE_DIR.parent
+
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 env = environ.Env(
     DJANGO_DEBUG=(bool, False),
