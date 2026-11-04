@@ -16,9 +16,9 @@ REPO_ROOT = BASE_DIR.parent
 
 env = environ.Env(
     DJANGO_DEBUG=(bool, False),
-    DJANGO_ALLOWED_HOSTS=(list, ["localhost", "127.0.0.1"]),
+    DJANGO_ALLOWED_HOSTS=["*"],
     DJANGO_CSRF_TRUSTED_ORIGINS=(list, []),
-    CORS_ALLOWED_ORIGINS=(list, ["http://localhost:5173", "http://127.0.0.1:5173"]),
+    CORS_ALLOWED_ORIGINS=True,
     REDIS_URL=(str, ""),
     DEMO_MODE=(bool, False),
     OPEN_METEO_API_KEY=(str, ""),

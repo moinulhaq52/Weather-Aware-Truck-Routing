@@ -3,7 +3,9 @@
   "services": {
     "backend": {
       "root": "backend",
-      "framework": "django"
+      "framework": "django",
+      "installCommand": "pip install -r requirements.txt",
+      "buildCommand": "python manage.py collectstatic --noinput"
     },
     "frontend": {
       "root": "frontend",
