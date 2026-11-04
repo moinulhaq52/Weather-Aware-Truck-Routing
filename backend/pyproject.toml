@@ -1,0 +1,18 @@
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = [".venv", "staticfiles"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4", "DJ", "RUF"]
+ignore = ["RUF012", "RUF001", "RUF002", "RUF003"]  # en-dashes mirror the brief
+
+[tool.ruff.lint.per-file-ignores]
+"trips/tests/**" = ["E501"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+python_files = ["test_*.py"]
+testpaths = ["trips/tests"]
+addopts = "-q"
+filterwarnings = ["error::DeprecationWarning:trips.*"]
